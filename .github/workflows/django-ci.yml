@@ -25,7 +25,11 @@ jobs:
           pip install django
 
       - name: Run migrations
-        run: python manage.py migrate --noinput
+        run: |
+          cd myproject
+          python manage.py migrate --noinput
 
       - name: Run tests
-        run: python manage.py test --verbosity=2
+        run: |
+          cd myproject
+          python manage.py test --verbosity=2
